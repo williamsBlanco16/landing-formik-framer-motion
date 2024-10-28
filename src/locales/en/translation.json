@@ -1,0 +1,29 @@
+{
+  "language": "en",
+  "landingLeadMagnet": "AI Lead Magnet Landing Page",
+  "benefitsTitle": "Benefits of Our AI Solution",
+  "benefitsDescription": "Discover how our AI technology can streamline your processes and enhance your productivity.",
+  "clientIdeaLabel": "Share Your Idea",
+  "selectTopics": "Select the topics that are most relevant to your needs",
+  "dynamicButtons": {
+    "quality": "Quality",
+    "contextWindow": "Context Window",
+    "pricing": "Pricing",
+    "performanceSummary": "Performance Summary",
+    "speed": "Speed",
+    "latency": "Latency",
+    "totalResponseTime": "Total Response Time"
+  },
+  "additionalInfoTitle": "Anything else you'd like to add?",
+  "additionalInfoPlaceholder": "Let us know if you are currently using any cloud or AI providers.",
+  "contactFormTitle": "Complete your details to see the results",
+  "nameLabel": "Name",
+  "namePlaceholder": "Enter your name",
+  "surnameLabel": "Surname",
+  "surnamePlaceholder": "Enter your surname",
+  "emailLabel": "Email",
+  "emailPlaceholder": "Enter your email",
+  "companyLabel": "Company",
+  "companyPlaceholder": "Enter your company name",
+  "consentText": "I consent to the processing of my personal data."
+}

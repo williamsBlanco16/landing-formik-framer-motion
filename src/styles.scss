@@ -1,0 +1,76 @@
+
+@use "sass:color";
+$primary-color: #ffffff;
+$secondary-color: #1e3a8a; // Azul oscuro
+$accent-color: #3b82f6; // Azul brillante
+$colorA: color.scale($primary-color, $lightness: -10%);
+$colorB: color.scale($accent-color, $lightness: 10%);
+
+body {
+  background-color: $primary-color;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero {
+  background: conic-gradient(from 20.59deg at 51.97% -2.87%, #F07E26 -24.37deg, #4EA1D3 26.25deg, #7C2483 101.25deg,
+                #C31C23 196.87deg, #EEDC20 277.5deg, #F07E26 335.63deg, #4EA1D3 386.25deg);
+  animation: domus-gradient 15s ease infinite;              
+  background-size: 400% 400%;
+
+
+  .hero-content {
+    h1 {
+      color: $secondary-color;
+    }
+
+    p {
+      color: $colorA;
+    }
+  }
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+
+  &-primary {
+    background-color: $accent-color;
+    color: $primary-color;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $colorB;
+    }
+  }
+}
+
+.form-text_tarea {
+  width: 80%;
+}
+@keyframes domus-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.loader {
+  border-top-color: #7C2483; /* Color del borde superior */
+  animation: spin 0.75s linear infinite; /* Aumenta la velocidad de la animación */
+  border-bottom-color: transparent;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
