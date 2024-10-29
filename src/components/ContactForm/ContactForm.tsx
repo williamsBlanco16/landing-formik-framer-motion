@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { ToggleButtons } from './ToggleButtons';
+import { ContactFormValues, Topic, TopicsData } from './contactForm.types';
+import { ToggleButtons } from '../ToggleButtons';
 import axios from 'axios';
 import * as Yup from 'yup';
-import Loader from './Loader';
-import Toast from './Toast';
+import Loader from '../Loader';
+import Toast from '../Toast';
+import data  from '../../../topic.json'
+const topicsData = data as unknown as TopicsData; 
 
 export const ContactForm = () => {
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
@@ -12,18 +15,19 @@ export const ContactForm = () => {
   const [toastMessage, setToastMessage] = useState<string | undefined>();
   const [toastType, setToastType] = useState<'success' | 'error' | ''>('');
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleSubmit = async (values: any, { resetForm }: any) => {
+  const handleSubmit = async (values: ContactFormValues, { resetForm }: { resetForm: () => void }) => {
     const apiUrl = import.meta.env.VITE_API_URL;
-    console.log('api:', apiUrl);
-    const topics = selectedTopics.map(topic => ({
-      topic,
-      value: 1
+    
+    const topics: Topic[] = selectedTopics.map(topic => ({
+      name: topic,
+      data: topicsData[topic] || []
     }));
+
     const contactData = {
       ...values,
       topics,
     };
+
     setShowLoading(true);
 
     try {
@@ -38,6 +42,7 @@ export const ContactForm = () => {
       console.error('Error al enviar los datos:', error);
       setToastMessage('Error al enviar los datos.');
       setToastType('error');
+
     } finally {
       setShowLoading(false);
       setTimeout(() => {
@@ -149,7 +154,7 @@ export const ContactForm = () => {
               className={`bg-[#7C2483] text-white py-2 px-4 rounded transition duration-300 ease-in-out 
               ${showLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#7C2483]'} 
               w-full md:w-auto`}
-              disabled={showLoading}  // Deshabilitar el botón si showLoading es true
+              disabled={showLoading}
             >
               Ver Resultado
             </button>
