@@ -1,15 +1,17 @@
-import { FC, useMemo } from 'react';
-import topicsData from '../../topic.json'
+import { Dispatch, FC, SetStateAction, useMemo } from 'react';
+import data from '../../topic.json'
+
+type TopicName = 'Calidad' | 'Velocidad' | 'Precio' | 'Latencia' | 'Tiempo Total de Respuesta';
 
 interface ToggleButtonsProps {
-  selectedTopics: string[];
-  setSelectedTopics: (topics: string[]) => void;
+  selectedTopics: TopicName[];
+  setSelectedTopics: Dispatch<SetStateAction<TopicName[]>>
 }
 
 export const ToggleButtons: FC<ToggleButtonsProps> = ({ selectedTopics, setSelectedTopics }) => {
-  const topics = useMemo(() => Object.keys(topicsData), []);
+  const topics:TopicName[] = useMemo(() => data.topics.map(({name}) => name as TopicName), []);
 
-  const handleToggle = (topic: string) => {
+  const handleToggle = (topic: TopicName) => {
     if (selectedTopics.includes(topic)) {
       // Uncheck if already selected
       setSelectedTopics(selectedTopics.filter(item => item !== topic));

@@ -1,74 +1,121 @@
 {
-  "Quality": [
-    { "o1-preview": 85 },
-    { "o1-mini": 82 },
-    { "Claude 3.5 Sonnet (Oct)": 80 },
-    { "Gemini 1.5 Pro (Sep)": 80 },
-    { "GPT-4o": 77 },
-    { "Gemini 1.5 Flash (Sep)": 73 },
-    { "Mistral Large 2": 73 },
-    { "Llama 3.1 405B": 72 },
-    { "GPT-4o mini": 71 },
-    { "Llama 3.2 90B (Vision)": 66 },
-    { "Llama 3.1 70B": 65 }
+  "topics": [
+    { "name": "Calidad" },
+    { "name": "Velocidad" },
+    { "name": "Precio" },
+    { "name": "Latencia" },
+    { "name": "Tiempo Total de Respuesta" }
   ],
-
-  "Speed": [
-    { "Gemini 1.5 Flash (Sep)": 219 },
-    { "GPT-4o mini": 91 },
-    { "GPT-4o": 89 },
-    { "Llama 3.1 70B": 76 },
-    { "o1-mini": 66 },
-    { "Gemini 1.5 Pro (Sep)": 60 },
-    { "Claude 3.5 Sonnet (Oct)": 60 },
-    { "Llama 3.2 90B (Vision)": 41 },
-    { "Mistral Large 2": 40 },
-    { "o1-preview": 33 },
-    { "Llama 3.1 405B": 20 }
-  ],
-
-  "Price": [
-    { "o1-preview": 0.1 },
-    { "Claude 3.5 Sonnet (Oct)": 0.3 },
-    { "o1-mini": 0.8 },
-    { "Llama 3.1 70B": 0.9 },
-    { "Llama 3.2 90B (Vision)": 2.2 },
-    { "Gemini 1.5 Pro (Sep)": 4.4 },
-    { "GPT-4o": 4.5 },
-    { "Mistral Large 2": 5.1 },
-    { "Llama 3.1 405B": 5.3 },
-    { "GPT-4o mini": 6 },
-    { "Gemini 1.5 Flash (Sep)": 26.3 }
-  ],
-  
-  "Latency": [
-    { "GPT-4o mini": 8.15 },
-    { "Claude 3 Haiku": 8.58 },
-    { "Llama 3.1 8B": 9.58 },
-    { "Mistral NeMo": 10.69 },
-    { "Claude 3.5 Sonnet (Oct)": 11.96 },
-    { "Llama 3.2 90B (Vision)": 12.47 },
-    { "Gemini 1.5 Flash (Sep)": 13.68 },
-    { "Llama 3.1 70B": 15.32 },
-    { "Mistral Large 2": 18.17 },
-    { "Jamba 1.5 Large": 22.66 },
-    { "Gemini 1.5 Pro (Sep)": 28.42 },
-    { "Llama 3.1 405B": 35.52 }
-  ],
-  
-  "Total Response Time": [
-    { "Claude 3 Haiku": 9.4 },
-    { "GPT-4o mini": 10.2 },
-    { "Llama 3.1 8B": 11.8 },
-    { "Claude 3.5 Sonnet (Oct)": 13.7 },
-    { "Gemini 1.5 Flash (Sep)": 14.5 },
-    { "Mistral NeMo": 15.3 },
-    { "Mistral Large 2": 19.2 },
-    { "Llama 3.2 90B (Vision)": 19.4 },
-    { "Jamba 1.5 Large": 24.9 },
-    { "Llama 3.1 70B": 25.6 },
-    { "Gemini 1.5 Pro (Sep)": 31 },
-    { "Llama 3.1 405B": 39.7 }
+  "providers": [
+    {
+      "provider": "o1-preview",
+      "scores": {
+        "Calidad": { "score": 85, "ranking": 1, "unit": "puntos" },
+        "Velocidad": { "score": 33, "ranking": 5, "unit": "ms" },
+        "Precio": { "score": 0.1, "ranking": 1, "unit": "USD" },
+        "Latencia": { "score": 35.52, "ranking": 8, "unit": "ms" },
+        "Tiempo Total de Respuesta": { "score": 9.4, "ranking": 1, "unit": "ms" }
+      }
+    },
+    {
+      "provider": "o1-mini",
+      "scores": {
+        "Calidad": { "score": 82, "ranking": 2, "unit": "puntos" },
+        "Velocidad": { "score": 66, "ranking": 3, "unit": "ms" },
+        "Precio": { "score": 0.8, "ranking": 2, "unit": "USD" },
+        "Latencia": { "score": 8.15, "ranking": 1, "unit": "ms" },
+        "Tiempo Total de Respuesta": { "score": 10.2, "ranking": 2, "unit": "ms" }
+      }
+    },
+    {
+      "provider": "Claude 3.5 Sonnet (Oct)",
+      "scores": {
+        "Calidad": { "score": 80, "ranking": 3, "unit": "puntos" },
+        "Velocidad": { "score": 60, "ranking": 4, "unit": "ms" },
+        "Precio": { "score": 0.3, "ranking": 3, "unit": "USD" },
+        "Latencia": { "score": 11.96, "ranking": 5, "unit": "ms" },
+        "Tiempo Total de Respuesta": { "score": 13.7, "ranking": 3, "unit": "ms" }
+      }
+    },
+    {
+      "provider": "Gemini 1.5 Pro (Sep)",
+      "scores": {
+        "Calidad": { "score": 80, "ranking": 3, "unit": "puntos" },
+        "Velocidad": { "score": 60, "ranking": 4, "unit": "ms" },
+        "Precio": { "score": 4.4, "ranking": 6, "unit": "USD" },
+        "Latencia": { "score": 28.42, "ranking": 6, "unit": "ms" },
+        "Tiempo Total de Respuesta": { "score": 31, "ranking": 6, "unit": "ms" }
+      }
+    },
+    {
+      "provider": "GPT-4o",
+      "scores": {
+        "Calidad": { "score": 77, "ranking": 5, "unit": "puntos" },
+        "Velocidad": { "score": 89, "ranking": 6, "unit": "ms" },
+        "Precio": { "score": 4.5, "ranking": 4, "unit": "USD" },
+        "Latencia": { "score": 28.42, "ranking": 6, "unit": "ms" },
+        "Tiempo Total de Respuesta": { "score": 31, "ranking": 6, "unit": "ms" }
+      }
+    },
+    {
+      "provider": "Gemini 1.5 Flash (Sep)",
+      "scores": {
+        "Calidad": { "score": 73, "ranking": 6, "unit": "puntos" },
+        "Velocidad": { "score": 219, "ranking": 1, "unit": "ms" },
+        "Precio": { "score": 26.3, "ranking": 7, "unit": "USD" },
+        "Latencia": { "score": 13.68, "ranking": 7, "unit": "ms" },
+        "Tiempo Total de Respuesta": { "score": 14.5, "ranking": 5, "unit": "ms" }
+      }
+    },
+    {
+      "provider": "Mistral Large 2",
+      "scores": {
+        "Calidad": { "score": 73, "ranking": 6, "unit": "puntos" },
+        "Velocidad": { "score": 40, "ranking": 8, "unit": "ms" },
+        "Precio": { "score": 5.1, "ranking": 5, "unit": "USD" },
+        "Latencia": { "score": 18.17, "ranking": 9, "unit": "ms" },
+        "Tiempo Total de Respuesta": { "score": 19.2, "ranking": 7, "unit": "ms" }
+      }
+    },
+    {
+      "provider": "Llama 3.1 405B",
+      "scores": {
+        "Calidad": { "score": 72, "ranking": 8, "unit": "puntos" },
+        "Velocidad": { "score": 20, "ranking": 10, "unit": "ms" },
+        "Precio": { "score": 5.3, "ranking": 9, "unit": "USD" },
+        "Latencia": { "score": 35.52, "ranking": 10, "unit": "ms" },
+        "Tiempo Total de Respuesta": { "score": 39.7, "ranking": 10, "unit": "ms" }
+      }
+    },
+    {
+      "provider": "GPT-4o mini",
+      "scores": {
+        "Calidad": { "score": 71, "ranking": 9, "unit": "puntos" },
+        "Velocidad": { "score": 91, "ranking": 2, "unit": "ms" },
+        "Precio": { "score": 6, "ranking": 11, "unit": "USD" },
+        "Latencia": { "score": 8.15, "ranking": 1, "unit": "ms" },
+        "Tiempo Total de Respuesta": { "score": 10.2, "ranking": 2, "unit": "ms" }
+      }
+    },
+    {
+      "provider": "Llama 3.2 90B (Vision)",
+      "scores": {
+        "Calidad": { "score": 66, "ranking": 10, "unit": "puntos" },
+        "Velocidad": { "score": 41, "ranking": 9, "unit": "ms" },
+        "Precio": { "score": 2.2, "ranking": 5, "unit": "USD" },
+        "Latencia": { "score": 12.47, "ranking": 6, "unit": "ms" },
+        "Tiempo Total de Respuesta": { "score": 19.4, "ranking": 8, "unit": "ms" }
+      }
+    },
+    {
+      "provider": "Llama 3.1 70B",
+      "scores": {
+        "Calidad": { "score": 65, "ranking": 11, "unit": "puntos" },
+        "Velocidad": { "score": 76, "ranking": 4, "unit": "ms" },
+        "Precio": { "score": 0.9, "ranking": 4, "unit": "USD" },
+        "Latencia": { "score": 15.32, "ranking": 8, "unit": "ms" },
+        "Tiempo Total de Respuesta": { "score": 25.6, "ranking": 9, "unit": "ms" }
+      }
+    }
   ]
 }
-
